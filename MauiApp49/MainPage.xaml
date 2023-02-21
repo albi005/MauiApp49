@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:a="clr-namespace:MauiApp49"
+    x:Class="MauiApp49.MainPage">
+    <Grid>
+        <CollectionView x:Name="_collectionView">
+            <CollectionView.Header>
+                <Label
+                    Text="Header"
+                    TextColor="Black"
+                    BackgroundColor="White"
+                    HeightRequest="100"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center" />
+            </CollectionView.Header>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="a:Model">
+                    <Grid HeightRequest="200">
+                        <BoxView Color="{Binding Color}" />
+                        <Label
+                            Text="{Binding Index}"
+                            HorizontalTextAlignment="Center"
+                            TextColor="Black"
+                            VerticalTextAlignment="Center"
+                            HeightRequest="200" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            <CollectionView.Footer>
+                <Label
+                    Text="Footer"
+                    HeightRequest="100"
+                    TextColor="Black"
+                    BackgroundColor="White"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center" />
+            </CollectionView.Footer>
+        </CollectionView>
+        <Label x:Name="_label" TextColor="Black" />
+    </Grid>
+</ContentPage>
